@@ -51,8 +51,27 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//
-// Chapter 42 [Threading]
+//Chapter 43 [Multithreading]
+
+        Thread thread1 = new Thread(new MyRunnable("Ping"));
+        Thread thread2 = new Thread(new MyRunnable("Pong"));
+
+        System.out.println("Game start!");
+
+        thread1.start();
+        thread2.start();
+
+        try {
+            thread1.join();
+            thread2.join();
+        } catch (InterruptedException e) {
+            System.out.println("Main thread was interrupted");
+        }
+
+        System.out.println("Game over!");
+
+
+/*Chapter 42 [Threading]
         Scanner scanner = new Scanner(System.in);
 
         MyRunnable myRunnable = new MyRunnable();
@@ -70,7 +89,7 @@ public class Main {
 
 
 
-/*Chapter 41 [Enums]
+Chapter 41 [Enums]
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter a day of the week: ");
         String input = scanner.nextLine().toUpperCase();
