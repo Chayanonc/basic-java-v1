@@ -51,7 +51,27 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//Chapter 40 [Hashmap]
+//Chapter 41 [Enums]
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a day of the week: ");
+        String input = scanner.nextLine().toUpperCase();
+
+        try {
+            Day day = Day.valueOf(input);
+
+            System.out.println(day);
+            System.out.println(day.getDayNumber());
+
+            switch (day) {
+                case MONDAY, TUESDAY, WENESDAY, THURSDAY, FRIDAY -> System.out.println("Is is a weekday");
+                case SATURDAY, SUNDAY -> System.out.println("Weekend");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error Input");
+        }
+
+/*
+Chapter 40 [Hashmap]
         HashMap<String, Double> map = new HashMap<>();
         map.put("apple", 100.99);
         map.put("orange", 78.99);
@@ -63,7 +83,7 @@ public class Main {
         for (String key : map.keySet()) {
             System.out.println(key+ " : "+ map.get(key));
         }
-/*
+
 Chapter 39 [Generics]
 
         Box<Integer> box = new Box<>();
