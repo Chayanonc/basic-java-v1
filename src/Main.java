@@ -51,7 +51,22 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//Chapter 38 [JAVA COUNTDOWN TIMER PROGRAM]
+//Chapter 39 [Generics]
+
+        Box<Integer> box = new Box<>();
+
+        box.setItem(2);
+        System.out.println(box.getItem());
+
+        Product<String, Double> product1 = new Product<>("Banana", 20.2);
+        Product<String, Integer> product2 = new Product<>("Banana", 2);
+
+        System.out.println(product1.getPrice());
+        System.out.println(product2.getPrice());
+
+
+/*
+Chapter 38 [JAVA COUNTDOWN TIMER PROGRAM]
 
         Scanner scanner = new Scanner(System.in);
 
@@ -75,7 +90,7 @@ public class Main {
 
         timer.scheduleAtFixedRate(task, 0, 1000);
 
-/*
+
 Chapter 37 [Timer, TimerTask]
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
