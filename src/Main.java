@@ -51,7 +51,20 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//Chapter 39 [Generics]
+//Chapter 40 [Hashmap]
+        HashMap<String, Double> map = new HashMap<>();
+        map.put("apple", 100.99);
+        map.put("orange", 78.99);
+        map.put("banana", 34.99);
+
+        System.out.println(map.containsKey("banana"));
+        System.out.println(map.get("apple"));
+
+        for (String key : map.keySet()) {
+            System.out.println(key+ " : "+ map.get(key));
+        }
+/*
+Chapter 39 [Generics]
 
         Box<Integer> box = new Box<>();
 
@@ -65,7 +78,6 @@ public class Main {
         System.out.println(product2.getPrice());
 
 
-/*
 Chapter 38 [JAVA COUNTDOWN TIMER PROGRAM]
 
         Scanner scanner = new Scanner(System.in);
