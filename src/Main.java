@@ -51,7 +51,32 @@ public class Main {
     }
 
     public static void main(String[] args) {
-//Chapter 37 [Timer, TimerTask]
+//Chapter 38 [JAVA COUNTDOWN TIMER PROGRAM]
+
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter number of seconds to countdown from: ");
+        int res = scanner.nextInt();
+
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            int count = res;
+
+            @Override
+            public void run() {
+                System.out.println(count);
+                count--;
+                if (count < 0) {
+                    System.out.println("Yeah!");
+                    timer.cancel();
+                }
+            }
+        };
+
+        timer.scheduleAtFixedRate(task, 0, 1000);
+
+/*
+Chapter 37 [Timer, TimerTask]
         Timer timer = new Timer();
         TimerTask task = new TimerTask() {
             int count = 3;
@@ -70,7 +95,6 @@ public class Main {
         timer.schedule(task,0, 1000);
 
 
-/*
 Chapter 36 [Anonymous class]
         Dog dog1 = new Dog();
         Dog dog2 = new Dog() {
